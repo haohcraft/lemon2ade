@@ -6,11 +6,15 @@
 // Bring in jQuery and React as a Bower component in the global namespace
 require('script!react/react-with-addons.js');
 require('script!jquery/jquery.js');
+require('flat-ui/bootstrap/css/bootstrap.css');
+require('flat-ui/less/flat-ui.less');
+require('flat-ui/less/demo.less');
+require('styles/main.less');
 
-var StarterApp = require('./components/StarterApp.jsx');
+var Lemonade = require('./components/Lemonade.jsx');
 
 React.renderComponent(
-	<StarterApp />, 
+	<Lemonade />, 
 	document.getElementById('app')
 );
 

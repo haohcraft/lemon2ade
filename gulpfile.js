@@ -1,14 +1,14 @@
-var path = require('path')
-var gulp = require('gulp')
-var gutil = require('gulp-util')
-var express = require('express')
-var sass = require('gulp-sass')
-var minifyCSS = require('gulp-minify-css')
-var clean = require('gulp-clean')
-var watch = require('gulp-watch')
-var rev = require('gulp-rev')
-var tiny_lr = require('tiny-lr')
-var webpack = require("webpack")
+var path = require('path');
+var gulp = require('gulp');
+var gutil = require('gulp-util');
+var less = require('gulp-less');
+var minifyCSS = require('gulp-minify-css');
+var clean = require('gulp-clean');
+var watch = require('gulp-watch');
+var rev = require('gulp-rev');
+var tiny_lr = require('tiny-lr');
+var webpack = require("webpack");
+var server = require('gulp-express');
 
 // #
 // # CONFIGS
@@ -19,8 +19,7 @@ if (gulp.env.production) { //# i.e. we were executed with a --production option
 	webpackConfig.plugins = webpackConfig.plugins.concat(new webpack.optimize.UglifyJsPlugin());
 	webpackConfig.output.filename = "main-[hash].js";
 }
-var sassConfig = { includePaths : ['src/styles'] }
-var httpPort = 4000
+var lessConfig = { includePaths : ['src/styles'] }
 // # paths to files in bower_components that should be copied to dist/assets/vendor
 var vendorPaths = ['es5-shim/es5-sham.js', 'es5-shim/es5-shim.js', 'bootstrap/dist/css/bootstrap.css']
 
@@ -33,10 +32,10 @@ gulp.task('clean', function() {
       .pipe(clean())
 });
 
-// # main.scss should @include any other CSS you want
-gulp.task('sass', function() {
-    gulp.src('src/styles/main.scss')
-      .pipe(sass(sassConfig).on('error', gutil.log))
+// # main.less should @include any other CSS you want
+gulp.task('less', function() {
+    gulp.src('src/styles/main.less')
+      .pipe(less(lessConfig).on('error', gutil.log))
       .pipe(gulp.env.production =='prod' ? minifyCSS(): gutil.noop())
       .pipe(gulp.env.production == 'prod' ? rev() : gutil.noop())
       .pipe(gulp.dest('dist/assets'))
@@ -68,9 +67,15 @@ gulp.task('webpack', function(callback) {
 	callback() ;
 });
 
+gulp.task('build',['webpack','less','copy','vendor']);
 
 gulp.task('dev',['build'], function() {
-    var servers = createServers(httpPort, 35729);
+
+     server.run({
+    	file: 'app.js'
+    });
+
+    gulp.watch(['app.js', 'routes/**/*'], [server.run]);
     // When /src changes, fire off a rebuild
     gulp.watch('./src/**/*', ['build']);
     // When /dist changes, tell the browser to reload
@@ -79,7 +84,6 @@ gulp.task('dev',['build'], function() {
     });
 });
 
-gulp.task('build',['webpack','sass','copy','vendor']);
 gulp.task('default',['build'], function() {
     // Give first-time users a little help
     setTimeout(function() {
@@ -92,25 +96,10 @@ gulp.task('default',['build'], function() {
     },3000);
 });
 
+
 // #
 // # HELPERS
 // #
-
-
-// # Create both http server and livereload server
-// 
-var createServers = function (port, lrport) {
-	var lr = tiny_lr();
-	lr.listen(lrport, function() {
-		gutil.log("LiveReload listening on", lrport);
-	});
-	var app = express();
-	app.use(express.static(path.resolve("./dist")));
-	app.listen(port, function() {
-		gutil.log("HTTP server listening on", port);
-	});
-}
-
 var execWebpack = function (config) {
 	webpack(config, function(err, stats) {
 		if (err) {
