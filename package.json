@@ -1,0 +1,26 @@
+{
+  "author": "Hao Huang",
+  "name": "Lemon2ade",
+  "version": "1.0.0",
+  "homepage": "",
+  "dependencies": {},
+  "devDependencies": {
+    "express": "~3.4.8",
+    "gulp": "~3.3.2",
+    "gulp-clean": "~0.2.2",
+    "gulp-livereload": "~0.2.0",
+    "gulp-minify-css": "~0.2.0",
+    "gulp-rev": "~0.2.0",
+    "gulp-sass": "~0.4.0",
+    "gulp-uglify": "~0.1.0",
+    "gulp-util": "^3.0.0",
+    "gulp-watch": "~0.4.1",
+    "gutil": "~1.5.0",
+    "jsx-loader": "~0.9.0",
+    "script-loader": "~0.5.1",
+    "tiny-lr": "0.0.5",
+    "webpack": "~1.4.0",
+    "webpack-dev-server": "~1.2.0"
+  },
+  "license": "MIT"
+}
