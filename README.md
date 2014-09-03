@@ -1,4 +1,5 @@
 ##Lemon2ade
+![screenshot](screenshot.jpg "screenshot")
 "If you get lemons, you'd better make some lemonade!!"
 
 ##About
