@@ -12,6 +12,7 @@ var lessMiddleware = require('less-middleware');
 var session = require('express-session');
 var errorHandler = require('errorhandler');
 var flash    = require('connect-flash');
+var favicon = require('serve-favicon');
 var config = {};
 
 
@@ -25,6 +26,7 @@ function Config (app) {
 
 	//==================================== all environments
 	//app.set('config', config);
+	app.use(favicon(dirname + '/src/images/favicon.ico'));
 	app.use(function (req, res, next) {
 	    res.locals.config = config;
 	    next();

@@ -40,6 +40,7 @@
     "react": "~0.11.0",
     "sass-loader": "~0.2.0",
     "script-loader": "~0.5.1",
+    "serve-favicon": "^2.1.1",
     "style-loader": "~0.6.2",
     "tiny-lr": "~0.0.5",
     "underscore": "^1.7.0",
