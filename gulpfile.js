@@ -71,16 +71,18 @@ gulp.task('build',['webpack','less','copy','vendor']);
 
 gulp.task('dev',['build'], function() {
 
-     server.run({
-    	file: 'app.js'
-    });
 
-    gulp.watch(['app.js', 'routes/**/*'], [server.run]);
+
+    gulp.watch(['./app.js', 'routes/**/*'], [server.notify, server.run]);
     // When /src changes, fire off a rebuild
-    gulp.watch('./src/**/*', ['build']);
+    gulp.watch('./src/**/*', [server.notify,'build']);
     // When /dist changes, tell the browser to reload
     gulp.watch('./dist/**/*', function(evt){
     	gutil.log(gutil.colors.cyan(evt.path), 'change');
+    });
+
+    server.run({
+      file: './app.js'
     });
 });
 

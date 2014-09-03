@@ -11,14 +11,14 @@ var ContentApi = function () {};
 ContentApi.prototype.createNew = function (req, res, next) {
 
 	// if (req.body.url) {
-		// log("ContentApi.createNew with url ...", req.body.url);
+		log("ContentApi.createNew with url ...", req.body.url);
 		// var candidateUrl = req.body.url;
 		var candidateUrl = "http://www.nytimes.com/2014/08/28/world/europe/ukraine-russia-novoazovsk-crimea.html?ref=todayspaper";
 		if (_isURL(candidateUrl)) {
 			
 			EmbedlyApi.extract(candidateUrl, function (data) {
 				log("Result from Embedly: ", data);
-				res.status(200).send(data.content);
+				res.status(200).send(data);
 			}); 
 		}
 

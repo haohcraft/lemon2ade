@@ -21,7 +21,7 @@ function Routes (app) {
 		res.render("pages/home");
 	});
 
-	app.get('/new', function(req, res, next) {
+	app.post('/api/content/new', function(req, res, next) {
 
 		var api = new ContentApi();
 		api.createNew(req, res, next);

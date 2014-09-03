@@ -22,6 +22,7 @@ var Md5 = require('bower/lib/util/md5.js');
  */
 function ParseArticle (data) {
 
+	var parsedData = data;
 	log("Parse Article ...");
 	var parsedSections = [];
 	var KEY_SECTIONS = "sections";
@@ -47,7 +48,9 @@ function ParseArticle (data) {
 		parsedSections.push(parsedSection);
 	}
 
-	return parsedSections;
+	parsedData.parsedSections = parsedSections;
+
+	return parsedData;
 
 }
 

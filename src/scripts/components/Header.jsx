@@ -4,6 +4,7 @@
 
 require('styles/header.less');
 
+
 var Header = React.createClass({
 
 	render: function() {

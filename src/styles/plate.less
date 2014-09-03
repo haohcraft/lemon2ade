@@ -1,0 +1,53 @@
+
+@import "~bootstrap/less/variables.less";
+@import "varibles.less";
+
+.Plate {
+	.demo-section-title {
+		text-align: center;
+	}
+	.Lemon {
+
+		padding: 10px;
+		border-right: 1px solid @color-wet-asphalt;
+
+		.main {
+			.title {
+				padding: 5px;
+			}
+			.content {
+				max-height: 600px;
+				padding: 5px;
+				overflow-y: scroll;
+			}
+		}
+	}
+
+	.Lemonade {
+		padding: 10px;
+		// border-left: 1px solid @color-wet-asphalt;
+
+		.main {
+			max-height: 600px;
+			background-color: #ffffff;
+
+			&.edit {
+				padding: 5px;
+			}
+		}
+	}
+}
+
+@media (max-width: @screen-md-min) {
+	.Plate {
+		.Lemon {
+			border-right: none;
+			border-bottom: 1px solid @color-wet-asphalt;
+		}
+
+		.Lemonade {
+			border-left: none;
+			border-top: 1px solid @color-wet-asphalt;
+		}
+	}	
+}
