@@ -4,6 +4,8 @@
 
 require('styles/plate.less');
 
+var Editable = require('./lib/Editable.jsx');
+
 var Plate = React.createClass({
 
 	render: function() {
@@ -27,6 +29,13 @@ var Plate = React.createClass({
 			);
 		}); 
 
+		var optionsTitle = {buttons: []};
+		var optionsContent = {
+			buttons: ['bold', 'italic', 'quote','underline', 'anchor'],
+			targetBlank: true,
+			placeholder: ''
+		};
+
 		return (
 			<div className="Plate section">
 				<div className="container">
@@ -45,15 +54,20 @@ var Plate = React.createClass({
 						<div className="col-md-6 Lemonade" >
 							<h3 className="demo-section-title">Lemonade</h3>
 							<div className="main edit">
-								<h4 className="title">标题： {title}</h4>
-								<small>作者: {authors} 发表于 {provider}</small>
-								<div className="editable">
-									正文：	
-								</div>
-								<div>
-									<small>Source: <a target="_blank" href={origin}>{origin}</a></small>
-								</div>
+								<Editable options={optionsTitle}>
+									<h4 className="title" >标题： {title}</h4>
+								</Editable>
+								<div className="author">作者: {authors} | 发表于 {provider} | <a target="_blank" href={origin}>Origin</a></div>
+								<Editable>
+									<div className="translator">译者：</div>
+								</Editable>
+								<Editable options={optionsContent}>
+									<div className="content">
+										&nbsp;	
+									</div>
+								</Editable>
 							</div>
+							
 						</div>
 					</div>
 				</div>

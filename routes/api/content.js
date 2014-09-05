@@ -11,9 +11,9 @@ var ContentApi = function () {};
 ContentApi.prototype.createNew = function (req, res, next) {
 
 	// if (req.body.url) {
-		log("ContentApi.createNew with url ...", req.body.url);
+		// log("ContentApi.createNew with url ...", req.body);
 		// var candidateUrl = req.body.url;
-		var candidateUrl = "http://www.nytimes.com/2014/08/28/world/europe/ukraine-russia-novoazovsk-crimea.html?ref=todayspaper";
+		var candidateUrl = "http://www.technologyreview.com/news/530406/a-dating-site-for-algorithms/";
 		if (_isURL(candidateUrl)) {
 			
 			EmbedlyApi.extract(candidateUrl, function (data) {

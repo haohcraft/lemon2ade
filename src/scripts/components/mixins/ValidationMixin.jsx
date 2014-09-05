@@ -11,6 +11,7 @@ define(function () {
   var _ = require('underscore');
 
   var ValidationMixin = {
+  	
     getInitialState: function () {
       return {
         errors: []

@@ -28,12 +28,46 @@
 		// border-left: 1px solid @color-wet-asphalt;
 
 		.main {
-			max-height: 600px;
-			background-color: #ffffff;
+			height: 685px;
+			padding: 5px;
 
-			&.edit {
+			.title {
+				background-color: #ffffff;
 				padding: 5px;
+
+				// Override the font-size within .title
+				p {
+					font-size: 29px !important;
+				}
 			}
+
+			.author {
+				color: @color-silver;
+				font-size: 14px;
+			}
+
+			.translator {
+				max-height: 34px;
+				color: @color-silver;
+				font-size: 14px;
+				padding: 5px;
+				background-color: #ffffff;
+
+				p {
+					font-size: 14px !important;
+				}
+			}
+			.content {
+				background-color: #ffffff;
+				margin-top: 10px;
+				height: 490px;
+				overflow-y: auto;
+			}
+		}
+		.source {
+			padding-top: 10px;
+			color: @color-silver;
+			font-size: 13px;
 		}
 	}
 }

@@ -46,7 +46,9 @@ var Candidate = React.createClass({
 		var url = "";
 		if (this.validate()) {
 			url = this.refs.CandidateInput.getDOMNode().value;
-			this.parseUrl(url);
+			this.parseUrl({
+				url: url
+			});
 		}
 		console.log("Candidate onButtonClick ....", url);
 	},
