@@ -1,0 +1,184 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/Hao/.nvm/v0.10.28/bin/node',
+1 verbose cli   '/Users/Hao/.nvm/v0.10.28/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'react-scroll-components',
+1 verbose cli   '--save-dev' ]
+2 info using npm@1.4.9
+3 info using node@v0.10.28
+4 warn package.json Lemon2ade@1.0.0 No repository field.
+5 warn package.json jsx-loader@0.9.0 No repository field.
+6 warn package.json less-loader@0.6.2 No repository field.
+7 warn package.json gutil@1.5.0 No repository field.
+8 verbose readDependencies using package.json deps
+9 verbose cache add [ 'react-scroll-components', null ]
+10 verbose cache add name=undefined spec="react-scroll-components" args=["react-scroll-components",null]
+11 verbose parsed url { protocol: null,
+11 verbose parsed url   slashes: null,
+11 verbose parsed url   auth: null,
+11 verbose parsed url   host: null,
+11 verbose parsed url   port: null,
+11 verbose parsed url   hostname: null,
+11 verbose parsed url   hash: null,
+11 verbose parsed url   search: null,
+11 verbose parsed url   query: null,
+11 verbose parsed url   pathname: 'react-scroll-components',
+11 verbose parsed url   path: 'react-scroll-components',
+11 verbose parsed url   href: 'react-scroll-components' }
+12 silly lockFile 617bb792-react-scroll-components react-scroll-components
+13 verbose lock react-scroll-components /Users/Hao/.npm/617bb792-react-scroll-components.lock
+14 silly lockFile 617bb792-react-scroll-components react-scroll-components
+15 silly lockFile 617bb792-react-scroll-components react-scroll-components
+16 verbose addNamed [ 'react-scroll-components', '' ]
+17 verbose addNamed [ null, '*' ]
+18 silly lockFile bf61dc22-react-scroll-components react-scroll-components@
+19 verbose lock react-scroll-components@ /Users/Hao/.npm/bf61dc22-react-scroll-components.lock
+20 silly addNameRange { name: 'react-scroll-components', range: '*', hasData: false }
+21 verbose url raw react-scroll-components
+22 verbose url resolving [ 'https://registry.npmjs.org/', './react-scroll-components' ]
+23 verbose url resolved https://registry.npmjs.org/react-scroll-components
+24 info trying registry request attempt 1 at 22:35:25
+25 http GET https://registry.npmjs.org/react-scroll-components
+26 http 200 https://registry.npmjs.org/react-scroll-components
+27 silly registry.get cb [ 200,
+27 silly registry.get   { date: 'Sun, 07 Sep 2014 02:35:25 GMT',
+27 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+27 silly registry.get     etag: '"6J6BQRFE9FUV8KIRLLH1ELL9E"',
+27 silly registry.get     'content-type': 'application/json',
+27 silly registry.get     'cache-control': 'max-age=60',
+27 silly registry.get     'content-length': '5976',
+27 silly registry.get     'accept-ranges': 'bytes',
+27 silly registry.get     via: '1.1 varnish',
+27 silly registry.get     age: '0',
+27 silly registry.get     'x-served-by': 'cache-jfk1029-JFK',
+27 silly registry.get     'x-cache': 'MISS',
+27 silly registry.get     'x-cache-hits': '0',
+27 silly registry.get     'x-timer': 'S1410057325.856678,VS0,VE98',
+27 silly registry.get     vary: 'Accept',
+27 silly registry.get     'keep-alive': 'timeout=10, max=50',
+27 silly registry.get     connection: 'Keep-Alive' } ]
+28 silly addNameRange number 2 { name: 'react-scroll-components', range: '*', hasData: true }
+29 silly addNameRange versions [ 'react-scroll-components', [ '0.0.1', '0.0.2', '0.0.3' ] ]
+30 verbose addNamed [ 'react-scroll-components', '0.0.3' ]
+31 verbose addNamed [ '0.0.3', '0.0.3' ]
+32 silly lockFile 63d2d9f2-react-scroll-components-0-0-3 react-scroll-components@0.0.3
+33 verbose lock react-scroll-components@0.0.3 /Users/Hao/.npm/63d2d9f2-react-scroll-components-0-0-3.lock
+34 silly lockFile b8094db9-eact-scroll-components-0-0-3-tgz https://registry.npmjs.org/react-scroll-components/-/react-scroll-components-0.0.3.tgz
+35 verbose lock https://registry.npmjs.org/react-scroll-components/-/react-scroll-components-0.0.3.tgz /Users/Hao/.npm/b8094db9-eact-scroll-components-0-0-3-tgz.lock
+36 verbose addRemoteTarball [ 'https://registry.npmjs.org/react-scroll-components/-/react-scroll-components-0.0.3.tgz',
+36 verbose addRemoteTarball   '099bf2296e3a81ee51de1dff35f4705fca2f94ef' ]
+37 info retry fetch attempt 1 at 22:35:26
+38 verbose fetch to= /var/folders/bp/wbvl7sbj79z2j20b31ylk5tr0000gn/T/npm-15735-VczIEYmO/1410057326005-0.6767984773032367/tmp.tgz
+39 http GET https://registry.npmjs.org/react-scroll-components/-/react-scroll-components-0.0.3.tgz
+40 http 200 https://registry.npmjs.org/react-scroll-components/-/react-scroll-components-0.0.3.tgz
+41 verbose tar unpack /var/folders/bp/wbvl7sbj79z2j20b31ylk5tr0000gn/T/npm-15735-VczIEYmO/1410057326005-0.6767984773032367/tmp.tgz
+42 silly lockFile d40bd627--scroll-components-0-0-3-package tar:///Users/Hao/.npm/react-scroll-components/0.0.3/package
+43 verbose lock tar:///Users/Hao/.npm/react-scroll-components/0.0.3/package /Users/Hao/.npm/d40bd627--scroll-components-0-0-3-package.lock
+44 silly lockFile bb6b1d00-26005-0-6767984773032367-tmp-tgz tar:///var/folders/bp/wbvl7sbj79z2j20b31ylk5tr0000gn/T/npm-15735-VczIEYmO/1410057326005-0.6767984773032367/tmp.tgz
+45 verbose lock tar:///var/folders/bp/wbvl7sbj79z2j20b31ylk5tr0000gn/T/npm-15735-VczIEYmO/1410057326005-0.6767984773032367/tmp.tgz /Users/Hao/.npm/bb6b1d00-26005-0-6767984773032367-tmp-tgz.lock
+46 silly gunzTarPerm modes [ '755', '644' ]
+47 silly gunzTarPerm extractEntry package.json
+48 silly gunzTarPerm extractEntry .npmignore
+49 silly gunzTarPerm extractEntry README.md
+50 silly gunzTarPerm extractEntry LICENSE
+51 silly gunzTarPerm extractEntry ScrollBlocker.js
+52 silly gunzTarPerm extractEntry ScrollListenerMixin.js
+53 silly gunzTarPerm extractEntry index.js
+54 silly gunzTarPerm extractEntry ScrollBlocker.css
+55 silly gunzTarPerm extractEntry jsx/ScrollBlocker.jsx
+56 silly lockFile d40bd627--scroll-components-0-0-3-package tar:///Users/Hao/.npm/react-scroll-components/0.0.3/package
+57 silly lockFile d40bd627--scroll-components-0-0-3-package tar:///Users/Hao/.npm/react-scroll-components/0.0.3/package
+58 silly lockFile bb6b1d00-26005-0-6767984773032367-tmp-tgz tar:///var/folders/bp/wbvl7sbj79z2j20b31ylk5tr0000gn/T/npm-15735-VczIEYmO/1410057326005-0.6767984773032367/tmp.tgz
+59 silly lockFile bb6b1d00-26005-0-6767984773032367-tmp-tgz tar:///var/folders/bp/wbvl7sbj79z2j20b31ylk5tr0000gn/T/npm-15735-VczIEYmO/1410057326005-0.6767984773032367/tmp.tgz
+60 silly lockFile b8094db9-eact-scroll-components-0-0-3-tgz https://registry.npmjs.org/react-scroll-components/-/react-scroll-components-0.0.3.tgz
+61 silly lockFile b8094db9-eact-scroll-components-0-0-3-tgz https://registry.npmjs.org/react-scroll-components/-/react-scroll-components-0.0.3.tgz
+62 silly lockFile 63d2d9f2-react-scroll-components-0-0-3 react-scroll-components@0.0.3
+63 silly lockFile 63d2d9f2-react-scroll-components-0-0-3 react-scroll-components@0.0.3
+64 silly lockFile bf61dc22-react-scroll-components react-scroll-components@
+65 silly lockFile bf61dc22-react-scroll-components react-scroll-components@
+66 silly resolved [ { name: 'react-scroll-components',
+66 silly resolved     version: '0.0.3',
+66 silly resolved     description: 'A set of components that react to page scrolling',
+66 silly resolved     main: 'index.js',
+66 silly resolved     scripts:
+66 silly resolved      { test: 'echo "Error: no test specified" && exit 1',
+66 silly resolved        build: './node_modules/react-tools/bin/jsx -x jsx ./jsx .' },
+66 silly resolved     repository:
+66 silly resolved      { type: 'git',
+66 silly resolved        url: 'https://github.com/jeroencoumans/react-scroll-components.git' },
+66 silly resolved     keywords: [ 'react', 'scroll', 'scrolling', 'react-component' ],
+66 silly resolved     author: { name: 'Jeroen Coumans', email: 'jeroencoumans@gmail.com' },
+66 silly resolved     license: 'MIT',
+66 silly resolved     bugs: { url: 'https://github.com/jeroencoumans/react-scroll-components/issues' },
+66 silly resolved     homepage: 'https://github.com/jeroencoumans/react-scroll-components',
+66 silly resolved     peerDependencies: { react: '^0.10.0' },
+66 silly resolved     dependencies: {},
+66 silly resolved     devDependencies: { 'react-tools': '^0.10.0' },
+66 silly resolved     readme: 'react-scroll-components\n=======================\n\nA set of components and mixins that react to page scrolling\n\n## ScrollListenerMixin\n\nThis mixin provides the following states:\n* `scrollTop`, which represents the documents\' current scroll position\n* `isScrolling`, wether the user is currently scrolling the document\n\nYou can pass the following methods to your React class:\n* `onPageScroll`: fired when the document is scrolling. This function gets the\ncurrent scroll position passed as argument.\n* `onPageScrollEnd`: fired when the document\'s scroll position hasn\'t changed for\n300 milliseconds. This function also gets the current scroll position passed as\nargument. If you want to change the timeout, override your components\'\n`endScrollTimeout`\n\n## ScrollBlocker\n\nA very simple component that allows you to block any mouse events during\nscrolling. Make sure to include ScrollBlocker.css somewhere in your CSS.\n\n## Example\n\n```javascript\nvar MyComponent = React.createClass({\n\tmixins: [ScrollListenerMixin],\n\trender: function () {\n\t\treturn (\n\t\t\t<ScrollBlocker active={this.state.isScrolling}>\n\t\t\t\tThe current scroll position is {this.state.scrollTop}.<br />\n\t\t\t\tThe document is currently {this.state.isScrolling ? \'\' : \'not\'} scrolling.\n\t\t\t</ScrollBlocker>\n\t\t)\n\t}\n})\n```\n',
+66 silly resolved     readmeFilename: 'README.md',
+66 silly resolved     _id: 'react-scroll-components@0.0.3',
+66 silly resolved     _shasum: '099bf2296e3a81ee51de1dff35f4705fca2f94ef',
+66 silly resolved     _from: 'react-scroll-components@',
+66 silly resolved     _resolved: 'https://registry.npmjs.org/react-scroll-components/-/react-scroll-components-0.0.3.tgz' } ]
+67 info install react-scroll-components@0.0.3 into /Users/Hao/Documents/Study/OnlineCourse/WebDev/Projects/lemon2ade
+68 info installOne react-scroll-components@0.0.3
+69 info /Users/Hao/Documents/Study/OnlineCourse/WebDev/Projects/lemon2ade/node_modules/react-scroll-components unbuild
+70 verbose tar unpack /Users/Hao/.npm/react-scroll-components/0.0.3/package.tgz
+71 silly lockFile d4e5cbb3--modules-react-scroll-components tar:///Users/Hao/Documents/Study/OnlineCourse/WebDev/Projects/lemon2ade/node_modules/react-scroll-components
+72 verbose lock tar:///Users/Hao/Documents/Study/OnlineCourse/WebDev/Projects/lemon2ade/node_modules/react-scroll-components /Users/Hao/.npm/d4e5cbb3--modules-react-scroll-components.lock
+73 silly lockFile 7ff5036f-oll-components-0-0-3-package-tgz tar:///Users/Hao/.npm/react-scroll-components/0.0.3/package.tgz
+74 verbose lock tar:///Users/Hao/.npm/react-scroll-components/0.0.3/package.tgz /Users/Hao/.npm/7ff5036f-oll-components-0-0-3-package-tgz.lock
+75 silly gunzTarPerm modes [ '755', '644' ]
+76 silly gunzTarPerm extractEntry package.json
+77 silly gunzTarPerm extractEntry .npmignore
+78 silly gunzTarPerm extractEntry README.md
+79 silly gunzTarPerm extractEntry LICENSE
+80 silly gunzTarPerm extractEntry ScrollBlocker.js
+81 silly gunzTarPerm extractEntry ScrollListenerMixin.js
+82 silly gunzTarPerm extractEntry index.js
+83 silly gunzTarPerm extractEntry ScrollBlocker.css
+84 silly gunzTarPerm extractEntry jsx/ScrollBlocker.jsx
+85 silly lockFile d4e5cbb3--modules-react-scroll-components tar:///Users/Hao/Documents/Study/OnlineCourse/WebDev/Projects/lemon2ade/node_modules/react-scroll-components
+86 silly lockFile d4e5cbb3--modules-react-scroll-components tar:///Users/Hao/Documents/Study/OnlineCourse/WebDev/Projects/lemon2ade/node_modules/react-scroll-components
+87 silly lockFile 7ff5036f-oll-components-0-0-3-package-tgz tar:///Users/Hao/.npm/react-scroll-components/0.0.3/package.tgz
+88 silly lockFile 7ff5036f-oll-components-0-0-3-package-tgz tar:///Users/Hao/.npm/react-scroll-components/0.0.3/package.tgz
+89 info preinstall react-scroll-components@0.0.3
+90 verbose readDependencies using package.json deps
+91 verbose readDependencies using package.json deps
+92 silly resolved []
+93 verbose about to build /Users/Hao/Documents/Study/OnlineCourse/WebDev/Projects/lemon2ade/node_modules/react-scroll-components
+94 info build /Users/Hao/Documents/Study/OnlineCourse/WebDev/Projects/lemon2ade/node_modules/react-scroll-components
+95 verbose linkStuff [ false,
+95 verbose linkStuff   false,
+95 verbose linkStuff   false,
+95 verbose linkStuff   '/Users/Hao/Documents/Study/OnlineCourse/WebDev/Projects/lemon2ade/node_modules' ]
+96 info linkStuff react-scroll-components@0.0.3
+97 verbose linkBins react-scroll-components@0.0.3
+98 verbose linkMans react-scroll-components@0.0.3
+99 verbose rebuildBundles react-scroll-components@0.0.3
+100 info install react-scroll-components@0.0.3
+101 info postinstall react-scroll-components@0.0.3
+102 verbose readDependencies using package.json deps
+103 verbose already installed skipping react@^0.10.0 /Users/Hao/Documents/Study/OnlineCourse/WebDev/Projects/lemon2ade
+104 silly resolved []
+105 warn unmet dependency /Users/Hao/Documents/Study/OnlineCourse/WebDev/Projects/lemon2ade/node_modules/webpack-dev-server requires express@'3.4.x' but will load
+105 warn unmet dependency /Users/Hao/Documents/Study/OnlineCourse/WebDev/Projects/lemon2ade/node_modules/express,
+105 warn unmet dependency which is version 4.8.6
+106 warn unmet dependency /Users/Hao/Documents/Study/OnlineCourse/WebDev/Projects/lemon2ade/node_modules/webpack/node_modules/node-libs-browser/node_modules/timers-browserify requires process@'~0.5.1' but will load
+106 warn unmet dependency /Users/Hao/Documents/Study/OnlineCourse/WebDev/Projects/lemon2ade/node_modules/webpack/node_modules/node-libs-browser/node_modules/process,
+106 warn unmet dependency which is version 0.7.0
+107 warn unmet dependency /Users/Hao/Documents/Study/OnlineCourse/WebDev/Projects/lemon2ade/node_modules/webpack/node_modules/node-libs-browser/node_modules/assert requires util@'0.10.2' but will load
+107 warn unmet dependency /Users/Hao/Documents/Study/OnlineCourse/WebDev/Projects/lemon2ade/node_modules/webpack/node_modules/node-libs-browser/node_modules/util,
+107 warn unmet dependency which is version 0.10.3
+108 warn unmet dependency /Users/Hao/Documents/Study/OnlineCourse/WebDev/Projects/lemon2ade/node_modules/webpack/node_modules/node-libs-browser/node_modules/url requires punycode@'1.2.4' but will load
+108 warn unmet dependency /Users/Hao/Documents/Study/OnlineCourse/WebDev/Projects/lemon2ade/node_modules/webpack/node_modules/node-libs-browser/node_modules/punycode,
+108 warn unmet dependency which is version 1.3.1
+109 error peerinvalid The package react does not satisfy its siblings' peerDependencies requirements!
+109 error peerinvalid Peer react-scroll-components@0.0.3 wants react@^0.10.0
+110 error System Darwin 13.3.0
+111 error command "/Users/Hao/.nvm/v0.10.28/bin/node" "/Users/Hao/.nvm/v0.10.28/bin/npm" "install" "react-scroll-components" "--save-dev"
+112 error cwd /Users/Hao/Documents/Study/OnlineCourse/WebDev/Projects/lemon2ade
+113 error node -v v0.10.28
+114 error npm -v 1.4.9
+115 error code EPEERINVALID
+116 verbose exit [ 1, true ]

@@ -10,7 +10,7 @@
 
 var log = require('debug')('lemonade:routes:lib:embedly:parse-article');
 var cheerio = require("cheerio");
-var Md5 = require('bower/lib/util/md5.js');
+// var Md5 = require('bower/lib/util/md5.js');
 
 /**
  * To parse the article
@@ -29,7 +29,7 @@ function ParseArticle (data) {
 
 	var $ = cheerio.load(data.content);
 	//A MD5 id for this specific article
-	var articleMd5 = Md5(data.original_url);
+	// var articleMd5 = Md5(data.original_url);
 	// Extract the paragraphs
 	var paragraphs = $('p');
 	//TODO: extract images
@@ -41,8 +41,8 @@ function ParseArticle (data) {
 	// Feed the parsedArticles with our paragraphs
 	for (cnt = 0; cnt < pSize; cnt++) {
 		var parsedSection = {};
-		var sectionId = articleMd5 + "_" + cnt;
-
+		// var sectionId = articleMd5 + "_" + cnt;
+		var sectionId = cnt;
 		parsedSection.id = sectionId;
 		parsedSection.content= $(paragraphs[cnt]).text();
 		parsedSections.push(parsedSection);

@@ -58,10 +58,49 @@
 				}
 			}
 			.content {
-				background-color: #ffffff;
+				// background-color: #ffffff;
+				position: relative;
 				margin-top: 10px;
-				height: 490px;
-				overflow-y: auto;
+				height: 510px;
+				overflow: hidden;
+
+				.scroll {
+					position: absolute;
+					width: 100%;
+					top: 0px;
+					left: 0px;
+					.lemonade {
+						margin: 10px 0px;
+						border-top: 2px solid @color-peter-river;
+						border-bottom: 2px solid @color-peter-river;
+						height: 200px;
+						background-color: #ffffff;
+						overflow-y: auto;
+
+						&.selected {
+							border: 1px solid @color-sun-flower;
+						}
+
+					}
+
+					&.scroll-enter {
+						opacity: 0;
+						transition: opacity .5s ease-in;
+						
+						&.scroll-enter-active {
+							opacity: 1;
+						}
+
+					}
+
+					&.scroll-leave {
+						opacity: 1;
+
+						&.scroll-leave-active {
+							opacity: 0;
+						}
+					}
+				}
 			}
 		}
 		.source {
