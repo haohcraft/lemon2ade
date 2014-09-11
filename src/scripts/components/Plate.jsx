@@ -4,23 +4,81 @@
 
 require('styles/plate.less');
 
+var Win = typeof window !== 'undefined' ? window : false;
+var MIN_SCROLL = -2310;
+var MAX_SCROLL = 0; 
 var HEIGHT_BLOCK = 210;
 var Editable = require('./lib/Editable.jsx');
-var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
+var ViewportMetrics = require('react/lib/ViewportMetrics');
+var _ = require('underscore');
 var Plate = React.createClass({
 
 	classSet: React.addons.classSet,
 
 	getInitialState: function() {
 		return {
-			selectedId: 0,
-			styleScroll: {top: 0}
+			selectedId: -1,
+			styleScroll: {top: 0},
+			styleScrollable: {'overflow-y': 'hidden'}
 		};
 	},
 
-	onMouseEnter: function (e) {
+	setNewScrollTop : function (deltaY) {
 
-		console.log("onMouseEnter the p ", $(e.target).data('lemonid'));
+		console.log("setNewScrollTop ...", deltaY);
+		var currentSrollTop = this.state.styleScroll.top;
+		var deltaScrollTop = 0;
+		var newScrollTop = 0;
+
+		if (deltaY > 0) {
+			deltaScrollTop = -1 * HEIGHT_BLOCK / 2;
+		} else {
+			deltaScrollTop = HEIGHT_BLOCK / 2;
+		}
+		
+		newScrollTop = currentSrollTop + deltaScrollTop;
+
+		newScrollTop = newScrollTop > MAX_SCROLL ? MAX_SCROLL : newScrollTop;
+		newScrollTop = newScrollTop < MIN_SCROLL ? MIN_SCROLL : newScrollTop;
+		console.log("onWheelLemonade ... newScrollTop ..", newScrollTop);
+
+		this.setState({
+			styleScroll: {
+				top: newScrollTop ,
+				transition: "top .5s ease-in"
+			}
+		});
+	},
+
+	onWheelLemonade: function (e) {
+
+		//Prevent the window scrolling
+		if (Win) {
+			Win.event.preventDefault();
+		}
+		_.debounce(this.setNewScrollTop(e.deltaY), 1000, true);
+	},
+
+
+	onMouseEnterLemonade: function (e) {
+
+		console.log("onMouseEnterLemonade ... ");
+		this.setState({
+			styleScrollable: {'overflow-y': 'auto'}
+		});
+	},
+
+	onMouseLeaveLemonade: function (e) {
+
+		console.log("onMouseLeaveLemonade ... ");
+		this.setState({
+			styleScrollable: {'overflow-y': 'hidden'}
+		});
+	},
+
+	onMouseEnterLemon: function (e) {
+
+		console.log("onMouseEnterLemon the p ", $(e.target).data('lemonid'));
 		var order = parseInt($(e.target).data('lemonid'), 10);
 		this.setState({
 			selectedId: order,
@@ -31,11 +89,9 @@ var Plate = React.createClass({
 		});
 	},
 
-	onMouseLeave: function (e) {
-		console.log("onMouseLeave the p ", $(e.target).data('lemonid'));
-		this.setState({
-			selectedId: 0
-		});
+	onMouseLeaveLemon: function (e) {
+		console.log("onMouseLeaveLemon the p ", $(e.target).data('lemonid'));
+
 	},
 
 	render: function() {
@@ -54,6 +110,7 @@ var Plate = React.createClass({
 
 		var lemons = [];
 		var lemonades = [];
+		var lemonades_backfilled = [];
 
 		var filteredArticles = article.parsedSections.filter(function (paragraph) {
 			return paragraph.content != ""
@@ -74,15 +131,14 @@ var Plate = React.createClass({
 				placeholder: ''
 			};
 
-			lemons.push(<p key={_id} className="lemon" data-lemonid={_id} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>{_article.content}</p>);
-			if (key >= this.state.selectedId) {
-				lemonades.push(
-					<Editable options={optionsContent}>
-						<div key={_id} className={classSetLemonade} data-lemonadeid={_id}>{key}&nbsp;</div>
-					</Editable>
-				);
-			}
+			lemons.push(<p key={_id} className="lemon" data-lemonid={_id} onMouseEnter={this.onMouseEnterLemon} onMouseLeave={this.onMouseLeaveLemon}>{_article.content}</p>);
+			lemonades.push(
+				<Editable options={optionsContent}>
+					<div key={_id} className={classSetLemonade} data-lemonadeid={_id}>{key}&nbsp;</div>
+				</Editable>
+			);
 		} 
+
 		
 		return (
 			<div className="Plate section">
@@ -108,10 +164,10 @@ var Plate = React.createClass({
 								<Editable>
 									<div className="translator">译者：</div>
 								</Editable>
-								<div className="content">
-									<ReactCSSTransitionGroup className="scroll" transitionName="scroll">
+								<div className="content" >
+									<div className="scroll" style={this.state.styleScroll} onWheel={this.onWheelLemonade} >
 										{lemonades}
-									</ReactCSSTransitionGroup>
+									</div>
 								</div>
 							</div>
 							
