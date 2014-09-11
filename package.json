@@ -37,7 +37,6 @@
     "medium-editor": "^1.8.14",
     "method-override": "~1.0.0",
     "morgan": "~1.0.0",
-    "node-readability": "^0.3.3",
     "react": "~0.11.0",
     "sass-loader": "~0.2.0",
     "script-loader": "~0.5.1",
@@ -49,5 +48,6 @@
     "webpack": "~1.4.0",
     "webpack-dev-server": "~1.2.0"
   },
+
   "license": "MIT"
 }
