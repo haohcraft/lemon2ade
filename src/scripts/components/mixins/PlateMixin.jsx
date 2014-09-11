@@ -35,6 +35,8 @@ var PlateMixin = {
 		 * The ID of the selected paragraph
 		 */
 		selectedId:React.PropTypes.number,
+
+		currentStyleScroll: React.PropTypes.object
 	},
 
 	getDefaultProps: function () {
@@ -44,7 +46,11 @@ var PlateMixin = {
 		origin: null,
 		articles: null,
 		onMouseEnterLemon: emptyFunction,
-		selectedId: -1;
+		selectedId: -1,
+		currentStyleScroll: {
+			top: 0,
+			transition: "top .5s ease-in"
+		}
 
 	}
 };

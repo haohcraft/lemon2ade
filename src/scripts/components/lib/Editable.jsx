@@ -37,13 +37,9 @@ var Editable = React.createClass({
 		options: React.PropTypes.object
 	},
 
-	handleMouseDown: function (e) {
-
+	componentDidMount: function() {
 		var node = this.getDOMNode();
-		console.log("Editable handleMouseDown ...",this.props.options);
 		var edit = new MediumEditor(node, this.props.options);
-
-
 	},
 
 	getDefaultProps: function() {
@@ -57,8 +53,7 @@ var Editable = React.createClass({
 		// Reuse the child provided
 		// This makes it flexible to use whatever element is wanted (div, ul, etc)
 		return React.addons.cloneWithProps(React.Children.only(this.props.children), {
-			className: 'react-editable',
-			onMouseDown: this.handleMouseDown
+			className: 'react-editable'
 		});
 	}
 

@@ -37,8 +37,7 @@ var Candidate = React.createClass({
 				this.props.onGetArticle(data);
 				console.log("/api/contnt/new response: ",data);
 			}.bind(this)
-		}).error(function(e) {
-		}.bind(this));
+		});
 	},
 
 	onButtonClick: function  () {

@@ -6,7 +6,6 @@ var Header = require("./Header.jsx");
 var Footer = require("./Footer.jsx");
 var Candidate = require('./Candidate.jsx');
 var Plate = require('./Plate.jsx');
-var ReactTransitionGroup = React.addons.TransitionGroup
 
 var Lemonade = React.createClass({
 

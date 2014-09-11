@@ -10,6 +10,7 @@ var MAX_SCROLL = 0;
 var HEIGHT_BLOCK = 210;
 var Editable = require('./lib/Editable.jsx');
 var ViewportMetrics = require('react/lib/ViewportMetrics');
+var Mic = require('./Mic.jsx');
 var _ = require('underscore');
 var Plate = React.createClass({
 
@@ -31,11 +32,11 @@ var Plate = React.createClass({
 		var newScrollTop = 0;
 
 		if (deltaY > 0) {
-			deltaScrollTop = -1 * HEIGHT_BLOCK / 2;
+			deltaScrollTop = -1 * HEIGHT_BLOCK;
 		} else {
-			deltaScrollTop = HEIGHT_BLOCK / 2;
+			deltaScrollTop = HEIGHT_BLOCK;
 		}
-		
+		console.log("onWheelLemonade ... currentSrollTop ..", currentSrollTop);
 		newScrollTop = currentSrollTop + deltaScrollTop;
 
 		newScrollTop = newScrollTop > MAX_SCROLL ? MAX_SCROLL : newScrollTop;
@@ -56,7 +57,7 @@ var Plate = React.createClass({
 		if (Win) {
 			Win.event.preventDefault();
 		}
-		_.debounce(this.setNewScrollTop(e.deltaY), 1000, true);
+		_.debounce(this.setNewScrollTop(e.deltaY), 9000, true);
 	},
 
 
@@ -100,8 +101,14 @@ var Plate = React.createClass({
 		if (Object.keys(article).length < 1) {
 			return <noscript />;
 		}
-		var optionsTitle = {buttons: []};
 		var title = article.title;
+		var optionsTitle = {
+			buttons: [],
+			placeholder: title
+		};
+		var optionsAuthor = {
+			placeholder: "译者："
+		};
 		var authors = article.authors.map(function (author) {
 			return author.name;
 		});
@@ -134,7 +141,8 @@ var Plate = React.createClass({
 			lemons.push(<p key={_id} className="lemon" data-lemonid={_id} onMouseEnter={this.onMouseEnterLemon} onMouseLeave={this.onMouseLeaveLemon}>{_article.content}</p>);
 			lemonades.push(
 				<Editable options={optionsContent}>
-					<div key={_id} className={classSetLemonade} data-lemonadeid={_id}>{key}&nbsp;</div>
+					<div key={_id} className={classSetLemonade} data-lemonadeid={_id}>
+					</div>
 				</Editable>
 			);
 		} 
@@ -158,11 +166,11 @@ var Plate = React.createClass({
 							<h3 className="demo-section-title">Lemonade</h3>
 							<div className="main edit">
 								<Editable options={optionsTitle}>
-									<h4 className="title" >标题： {title}</h4>
+									<h4 className="title" ></h4>
 								</Editable>
 								<div className="author">作者: {authors} | 发表于 {provider} | <a target="_blank" href={origin}>Origin</a></div>
-								<Editable>
-									<div className="translator">译者：</div>
+								<Editable options={optionsAuthor}>
+									<div className="translator"></div>
 								</Editable>
 								<div className="content" >
 									<div className="scroll" style={this.state.styleScroll} onWheel={this.onWheelLemonade} >

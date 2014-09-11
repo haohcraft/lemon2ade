@@ -7,6 +7,7 @@
   "devDependencies": {
     "async": "^0.9.0",
     "body-parser": "~1.0.0",
+    "bootstrap": "^3.2.0",
     "cheerio": "^0.17.0",
     "connect-flash": "~0.1.1",
     "connect-livereload": "^0.4.0",
@@ -18,7 +19,6 @@
     "express": "~4.8",
     "express-session": "",
     "file-loader": "^0.7.2",
-    "flat-ui": "~2.1.1",
     "gulp": "~3.3.2",
     "gulp-clean": "~0.2.2",
     "gulp-express": "0.0.9",
@@ -37,6 +37,7 @@
     "medium-editor": "^1.8.14",
     "method-override": "~1.0.0",
     "morgan": "~1.0.0",
+    "napa": "^0.4.1",
     "react": "~0.11.0",
     "sass-loader": "~0.2.0",
     "script-loader": "~0.5.1",
@@ -46,8 +47,11 @@
     "underscore": "^1.7.0",
     "url-loader": "^0.5.5",
     "webpack": "~1.4.0",
-    "webpack-dev-server": "~1.2.0"
+    "webpack-dev-server": "~1.2.0",
+    "zepto": "0.0.4"
   },
-
+  "scripts": {
+    "install": "napa haohcraft/Flat-UI:flat-ui"
+  },
   "license": "MIT"
 }
