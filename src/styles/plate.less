@@ -83,28 +83,31 @@
 					width: 100%;
 					top: 0px;
 					left: 0px;
-					.lemonade {
+					.lemonade-container {
 						position: relative;
-						margin: 10px 0px;
-						border-top: 6px solid @color-peter-river;
-						border-radius: 6px;
-						height: 200px;
-						background-color: #ffffff;
-						overflow-y: auto;
-
-						&:focus {
-							border:none;
-						}
-
-						&.selected {
-							border-left: 3px solid @color-emerald;
-							border-right: 3px solid @color-emerald;
+						.lemonade {
+							position: relative;
+							margin: 10px 0px;
+							border-top: 6px solid @color-peter-river;
 							border-radius: 6px;
-						}
-						.control {
+							height: 200px;
+							background-color: #ffffff;
+							overflow-y: auto;
+
+							&:focus {
+								border:none;
+							}
+
+							&.selected {
+								border-left: 3px solid @color-emerald;
+								border-right: 3px solid @color-emerald;
+								border-radius: 6px;
+							}
+							.control {
+
+							}
 
 						}
-
 					}
 
 					&.scroll-enter {

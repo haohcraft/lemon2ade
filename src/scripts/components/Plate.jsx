@@ -140,10 +140,14 @@ var Plate = React.createClass({
 
 			lemons.push(<p key={_id} className="lemon" data-lemonid={_id} onMouseEnter={this.onMouseEnterLemon} onMouseLeave={this.onMouseLeaveLemon}>{_article.content}</p>);
 			lemonades.push(
-				<Editable options={optionsContent}>
-					<div key={_id} className={classSetLemonade} data-lemonadeid={_id}>
-					</div>
-				</Editable>
+				<div className="lemonade-container">
+					<Editable options={optionsContent}>
+						<div key={_id} className={classSetLemonade} data-lemonadeid={_id}>
+							
+						</div>
+					</Editable>
+					<Mic />
+				</div>
 			);
 		} 
 
